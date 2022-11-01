@@ -3,8 +3,17 @@ from django.http import HttpResponse
 def indexPageView(request) :
     return HttpResponse('Hello Universe!')  
 
-def aboutPageView(request):
-    return HttpResponse("About page")
+def routesPageView(request):
+    return HttpResponse("Routes page")
 
-def contactPageView(request):
-    return HttpResponse("Contact Page")
+def learnMorePageView(request):
+    return HttpResponse("Learn More Page")
+
+def aboutPageView(request):
+    return HttpResponse("About Page")
+
+def editPageView(request):
+    return HttpResponse("Edit Page")
+
+def addPageView(request):
+    return HttpResponse("Add Page")
