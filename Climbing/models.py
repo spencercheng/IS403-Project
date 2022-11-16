@@ -4,10 +4,18 @@ from datetime import datetime, timedelta
 
 
 
-class TripCategory(models.Model):
-    description = models.CharField(max_length=20)
+class ClimbingSpots(models.Model):
+    City = models.CharField(max_length=20)
+    GeneralLocation = models.CharField(max_length=30) #could be a dropdown
+    Crag = models.CharField(max_length=30)
+    Wall = models.CharField(max_length=40)
+    Route = models.CharField(max_length=50)
+    Description = models.CharField(max_length=3000)
+    Difficulty  = models.FloatField(default=0)
+    UserRatings = models.FloatField(default=0)
+    Comments = models.CharField(max_length=3000)
     def __str__(self):
-        return (self.description)
+        return (self.City)
 
 # class Destination(models.Model):
 #     trip_category = models.OneToOneField(TripCategory, models.CASCADE)
