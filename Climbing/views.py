@@ -1,10 +1,11 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def indexPageView(request) :
-    return HttpResponse('Hello Universe!')  
+    return render(request, 'Climbing/index.html')
 
 def routesPageView(request):
-    return HttpResponse("Routes page")
+    return render(request, 'Climbing/about.html')
 
 def learnMorePageView(request):
     return HttpResponse("Learn More Page")
