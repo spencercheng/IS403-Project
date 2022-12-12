@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{%block content%}
+<nav>
+    <h2 class="logo">Climbing <span>Spots</span></h2>
+    <ul>
+        <li class="list"><a href="#">Home</a></li>
+        <li class="list"><a href="#">About Us</a></li>
+        <li class="list"><a href="#">Contact Us</a></li>
+    </ul>
+    <a href="#" class="btn">Climbing Spot</a>
+</nav>
+<div>
+    <form class="" method="POST" action="{%url "addCrag"%}" name="cragForm">
+        {%csrf_token%}
+    <label for="cragName">Crag Name:</label>
+    <input type="text" name="cragName" id="cragName" autofocus>
+    <br><br>
+    <label for="city">Crag Location:</label>
+    <input type="text" name="city" id="city">
+    <br><br>
+    <label for="state">State: </label>
+    <input type="text" name="state" id="state">
+    <br><br>
+    <button type="submit">Add</button>
+    </form>
+
+</div> 
+<br> 
+{%endblock%}

@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+
+<div>
+    {%for crag in cragData%}
+    <div>
+        {{crag.cragName}}
+
+        <form method="POST" class="form-group" action="{% url 'editCrag' %}" name="editCrag" style="float:left">
+            {%csrf_token%}
+            <input type="number" name="cragID" id="cragID" value="{{crag.id}}" hidden>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+        <form method="POST" class="form-group" action="{% url 'delCrag' %}" name="delCrag" style="float:left">
+            {%csrf_token%}
+            <input type="number" name="cragID" id="cragID" value="{{crag.id}}" hidden>
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+    {%endfor%}
+</div>
+
+{%endblock%}
