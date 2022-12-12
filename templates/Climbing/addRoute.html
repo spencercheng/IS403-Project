@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{%block content%}
+<nav>
+    <h2 class="logo">Climbing <span>Spots</span></h2>
+    <ul>
+        <li class="list"><a href="{%url "index"%}">Home</a></li>
+        <li class="list"><a href="{%url "viewCrags"%}">Crags</a></li>
+        <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
+        <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
+    </ul>
+    <a href="#" class="btn">Climbing Spot</a>
+</nav>
+<div>
+    <form class="" method="POST" action="{%url "addRoute"%}" name="RouteForm">
+        {%csrf_token%}
+    <label for="routeName">Route Name: </label>
+    <input type="text" name="routeName" id="routeName" autofocus>
+    <br><br>
+    <label for="comments">Comments: </label>
+    <input type="text" name="comments" id="comments" autofocus>
+    <br><br>
+    <label for="description">Description: </label>
+    <input type="text" name="description" id="description" autofocus>
+    <br><br>
+    <label for="wall">Wall</label>
+    <select  name="wall" id="wall">
+        {%for wall in data%}
+            <option value="{{wall.id}}">{{wall.wallName}}</option>
+        {%endfor%}
+    </select>
+    <br><br>
+    <button type="submit">Add</button>
+    </form>
+
+</div> 
+<br> 
+{%endblock%}

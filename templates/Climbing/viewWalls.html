@@ -1,8 +1,17 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block content%}
-
-<div class="maindiv">
+<nav>
+    <h2 class="logo">Climbing <span>Spots</span></h2>
+    <ul>
+        <li class="list"><a href="{%url "index"%}">Home</a></li>
+        <li class="list"><a href="{%url "viewCrags"%}">Crags</a></li>
+        <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
+        <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
+    </ul>
+    <a href="#" class="btn">Climbing Spot</a>
+</nav>
+<div>
     {%for wall in wallData%}
     <br>
     <div>

@@ -1,7 +1,20 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block content%}
-
+<nav>
+    <h2 class="logo">Climbing <span>Spots</span></h2>
+    <ul>
+        <li class="list"><a href="{%url "index"%}">Home</a></li>
+        <li class="list"><a href="{%url "viewCrags"%}">Crags</a></li>
+        <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
+        <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
+    </ul>
+    <a href="#" class="btn">Climbing Spot</a>
+</nav>
+<div>
+    {%for crag in cragData%}
+    <div>
+        {{crag.cragName}}
 
 <div class="maindiv">
     {%for crag in cragData%}
