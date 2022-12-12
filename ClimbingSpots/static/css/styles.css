@@ -302,3 +302,6 @@ footer p:nth-child(2){
 	/* bottom: 35px; */
 	font-size: 14px; 
 }
+.list a {
+	color: black;
+}

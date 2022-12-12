@@ -6,7 +6,6 @@ class Crag(models.Model):
 
     def __str__(self):
         return (self.cragName)
-
 class Wall(models.Model):
     wallName = models.CharField(max_length= 50)
     crag = models.ForeignKey(Crag, on_delete=models.CASCADE)
