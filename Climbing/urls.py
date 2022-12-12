@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import indexPageView, routesPageView, learnMorePageView, aboutPageView, editPageView, addPageView
+from .views import *
 
 urlpatterns = [
     path("", indexPageView, name="index"), 
@@ -7,5 +7,7 @@ urlpatterns = [
     path("learnmore/" , learnMorePageView, name="learnmore"),
     path("about/", aboutPageView, name="about"),
     path("edit/", editPageView, name="edit"),
-    path("add/", addPageView, name="add"),
+    path("addCrag/", addCragPageView, name="addCrag"),
+    path("addWall/", addWallPageView, name="addWall"),
+    path("addRoute/", addRoutePageView, name="addRoute"),
 ]     
