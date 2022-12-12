@@ -11,7 +11,7 @@
     </ul>
     <a href="#" class="btn">Climbing Spot</a>
 </nav>
-<div>
+<div class="maindiv">
     {%for wall in wallData%}
     <br>
     <div>
@@ -31,6 +31,9 @@
     <br>
     <hr>
     {%endfor%}
+    <br>
+    &nbsp&nbsp&nbsp<a href="{% url 'addWall'%}"><button type="button" class="btn btn-primary btn-block">Add New Wall</button></a>
+    <br><br>
 </div>
 
 {%endblock%}

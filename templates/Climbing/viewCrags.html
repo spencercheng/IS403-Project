@@ -11,10 +11,6 @@
     </ul>
     <a href="#" class="btn">Climbing Spot</a>
 </nav>
-<div>
-    {%for crag in cragData%}
-    <div>
-        {{crag.cragName}}
 
 <div class="maindiv">
     {%for crag in cragData%}
@@ -36,6 +32,9 @@
     <br>
     <hr>
     {%endfor%}
+    <br>
+    &nbsp&nbsp&nbsp<a href="{% url 'addCrag'%}"><button type="button" class="btn btn-primary btn-block">Add New Crag</button></a>
+    <br><br>
 </div>
 
 {%endblock%}
