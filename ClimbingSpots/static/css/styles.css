@@ -305,3 +305,7 @@ footer p:nth-child(2){
 .list a {
 	color: black;
 }
+.maindiv {
+	margin: 70px;
+	border: 1px solid;
+}

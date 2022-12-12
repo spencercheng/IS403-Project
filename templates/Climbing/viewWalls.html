@@ -2,22 +2,25 @@
 {%load static%}
 {%block content%}
 
-<div>
+<div class="maindiv">
     {%for wall in wallData%}
+    <br>
     <div>
-        {{wall.wallName}}
-
-        <form method="POST" class="form-group" action="{% url 'editWall' %}" name="editWall" style="float:left">
+        &nbsp&nbsp&nbsp{{wall.wallName}} | {{wall.crag}}
+        <form method="POST" class="form-group" action="{% url 'delWall' %}" name="delWall" style="float:right">
+            {%csrf_token%}
+            <input type="number" name="wallID" id="wallID" value="{{wall.id}}" hidden>
+            &nbsp&nbsp<button type="submit" class="btn btn-primary">Delete</button>&nbsp&nbsp&nbsp
+        </form>
+        <form method="POST" class="form-group" action="{% url 'editWall' %}" name="editWall" style="float:right">
             {%csrf_token%}
             <input type="number" name="wallID" id="wallID" value="{{wall.id}}" hidden>
             <button type="submit" class="btn btn-primary">Edit</button>
         </form>
-        <form method="POST" class="form-group" action="{% url 'delWall' %}" name="delWall" style="float:left">
-            {%csrf_token%}
-            <input type="number" name="wallID" id="wallID" value="{{wall.id}}" hidden>
-            <button type="submit" class="btn btn-primary">Delete</button>
-        </form>
     </div>
+    <br>
+    <br>
+    <hr>
     {%endfor%}
 </div>
 

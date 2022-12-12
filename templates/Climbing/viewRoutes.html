@@ -2,22 +2,25 @@
 {%load static%}
 {%block content%}
 
-<div>
+<div class="maindiv">
     {%for route in routeData%}
+    <br>
     <div>
-        {{route.routeName}}
-
-        <form method="POST" class="form-group" action="{% url 'editRoute' %}" name="editRoute" style="float:left">
+        &nbsp&nbsp&nbsp{{route.routeName}} | {{route.wall}} | {{route.description}}
+        <form method="POST" class="form-group" action="{% url 'delRoute' %}" name="delRoute" style="float:right">
+            {%csrf_token%}
+            <input type="number" name="routeID" id="routeID" value="{{route.id}}" hidden>
+            &nbsp&nbsp<button type="submit" class="btn btn-primary">Delete</button>&nbsp&nbsp&nbsp
+        </form> 
+        <form method="POST" class="form-group" action="{% url 'editRoute' %}" name="editRoute" style="float:right">
             {%csrf_token%}
             <input type="number" name="routeID" id="routeID" value="{{route.id}}" hidden>
             <button type="submit" class="btn btn-primary">Edit</button>
         </form>
-        <form method="POST" class="form-group" action="{% url 'delRoute' %}" name="delRoute" style="float:left">
-            {%csrf_token%}
-            <input type="number" name="routeID" id="routeID" value="{{route.id}}" hidden>
-            <button type="submit" class="btn btn-primary">Delete</button>
-        </form> 
     </div>
+    <br>
+    <br>
+    <hr>
     {%endfor%}
 </div>
 
