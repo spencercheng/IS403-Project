@@ -1,7 +1,7 @@
 from django.contrib import admin
-from  .models import TripCategory
+from  .models import ClimbingSpots
 
 
 # admin.site.register(Customer)
-admin.site.register(TripCategory)
+admin.site.register(ClimbingSpots)
 # admin.site.register(Destination)
