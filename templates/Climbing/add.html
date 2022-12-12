@@ -2,5 +2,28 @@
 {% load static %}
 
 {%block content%}
-<h1>Yo this is the add page</h1>
+<nav>
+    <h2 class="logo">Climbing <span>Spots</span></h2>
+    <ul>
+        <li class="list"><a href="#">Home</a></li>
+        <li class="list"><a href="#">About Us</a></li>
+        <li class="list"><a href="#">Contact Us</a></li>
+    </ul>
+    <a href="#" class="btn">Climbing Spot</a>
+</nav>
+<div>
+    <form class="" method="POST" action="" name="searchForm">
+        {%csrf_token%}
+    <label for="" >
+    <input type="text" name="" id="climbing1">
+    </form>
+</div> 
+<br> 
+<div>
+    <form class="" method="POST" action="" name="searchForm">
+        {%csrf_token%}
+    <label for="" >
+    <input type="text" name="" id="">
+    </form>
+</div>  
 {%endblock%}

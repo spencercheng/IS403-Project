@@ -17,6 +17,7 @@ class ClimbingSpots(models.Model):
     def __str__(self):
         return (self.City)
 
+
 # class Destination(models.Model):
 #     trip_category = models.OneToOneField(TripCategory, models.CASCADE)
 #     title = models.CharField(max_length  = 50)
