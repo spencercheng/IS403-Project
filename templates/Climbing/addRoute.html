@@ -12,7 +12,7 @@
     <a href="#" class="btn">Climbing Spot</a>
 </nav>
 <div>
-    <form class="" method="POST" action="{%url "addRoute"%}" name="RouteForm">
+    <form class="" method="POST" action="{%url "submitRoute"%}" name="RouteForm">
         {%csrf_token%}
     <label for="routeName">Route Name: </label>
     <input type="text" name="routeName" id="routeName" autofocus>
