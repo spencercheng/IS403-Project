@@ -1,7 +1,7 @@
 from django.contrib import admin
-from  .models import ClimbingSpots
+from  .models import *
 
+admin.site.register(Crag)
+admin.site.register(Wall)
+admin.site.register(Route)
 
-# admin.site.register(Customer)
-admin.site.register(ClimbingSpots)
-# admin.site.register(Destination)
