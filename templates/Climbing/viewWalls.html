@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+
+<div>
+    {%for wall in wallData%}
+    <div>
+        {{wall.wallName}}
+
+        <form method="POST" class="form-group" action="{% url 'editWall' %}" name="editWall" style="float:left">
+            {%csrf_token%}
+            <input type="number" name="wallID" id="wallID" value="{{wall.id}}" hidden>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+        <form method="POST" class="form-group" action="{% url 'delWall' %}" name="delWall" style="float:left">
+            {%csrf_token%}
+            <input type="number" name="wallID" id="wallID" value="{{wall.id}}" hidden>
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+    {%endfor%}
+</div>
+
+{%endblock%}
