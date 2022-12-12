@@ -29,6 +29,7 @@ def addCragPageView(request):
     return render(request, 'Climbing/addCrag.html')
 
 def addWallPageView(request):
+    
     data = Crag.objects.all()
     context= {
         "data": data
@@ -37,15 +38,16 @@ def addWallPageView(request):
     if request.method == 'POST':
        wall = Wall()
        wall.wallName = request.POST['wallName']
-       wall.crag = request.POST['cragName']
+       print(wall.wallName)
+       wall.crag = request.POST['crag']
        wall.save()
 
     return render(request, 'Climbing/addWall.html', context)
 
 def addRoutePageView(request):
-    data = Wall.objects.all()
+    addRoute = Wall.objects.all()
     context= {
-        "data": data
+        "data": addRoute
     }
 
     if request.method == 'POST':
@@ -53,11 +55,10 @@ def addRoutePageView(request):
        route.routeName = request.POST['routeName']
        route.comments = request.POST['comments']
        route.description = request.POST['description']
-       route.wall = request.POST['wallName']
+       route.wall = request.POST['wall']
        route.save()
 
     return render(request, 'Climbing/addRoute.html', context)
-
 
 def viewCrags(request):
     
