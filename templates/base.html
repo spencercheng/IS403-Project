@@ -1,16 +1,33 @@
 {%load static%}
-<!DOCTYPE html>
+{%load static%}
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>TripMe Travel</title>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
-    </head>
 
-{%block content%}
-{%endblock%}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{%block title %}Homepage {%endblock%}</title>
+  <!-- Icon-->
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+
+</head>
+<body>
+
+  {%block content%}
+  {%endblock%}
+
+  
+
+
+  <footer>
+    <p></p>
+    <p>FOr more hiking information, contact IKE MELANSON</p>
+    <p class="end">CopyRight @ Section 4 Group 4 </p>
+  </footer>
+
+  
+</body>
+</html>
+
 
