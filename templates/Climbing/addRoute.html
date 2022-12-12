@@ -5,14 +5,15 @@
 <nav>
     <h2 class="logo">Climbing <span>Spots</span></h2>
     <ul>
-        <li class="list"><a href="#">Home</a></li>
-        <li class="list"><a href="#">About Us</a></li>
-        <li class="list"><a href="#">Contact Us</a></li>
+        <li class="list"><a href="{%url "index"%}">Home</a></li>
+        <li class="list"><a href="{%url "viewCrags"%}">Crags</a></li>
+        <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
+        <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
     </ul>
     <a href="#" class="btn">Climbing Spot</a>
 </nav>
 <div>
-    <form class="" method="POST" action="{%url "addRoute"%}" name="RouteForm">
+    <form class="" method="POST" action="{%url "submitRoute"%}" name="RouteForm">
         {%csrf_token%}
     <label for="routeName">Route Name: </label>
     <input type="text" name="routeName" id="routeName" autofocus>

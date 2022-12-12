@@ -5,26 +5,27 @@
 <nav>
     <h2 class="logo">Climbing <span>Spots</span></h2>
     <ul>
-        <li class="list"><a href="#">Home</a></li>
-        <li class="list"><a href="#">About Us</a></li>
-        <li class="list"><a href="#">Contact Us</a></li>
+        <li class="list"><a href="{%url "index"%}">Home</a></li>
+        <li class="list"><a href="{%url "viewCrags"%}">Crags</a></li>
+        <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
+        <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
     </ul>
     <a href="#" class="btn">Climbing Spot</a>
 </nav>
 <div>
-    <form class="" method="POST" action="{%url "addWall"%}" name="WallForm">
+    <form class="" method="POST" action="{%url "submitWall" %}" name="WallForm">
         {%csrf_token%}
-    <label for="wallName">Wall Name: </label>
-    <input type="text" name="wallName" id="wallName" autofocus>
-    <br><br>
-    <label for="crag">Crag</label>
-    <select  name="crag" id="crag">
-        {%for crag in data%}
-            <option value="">{{crag.cragName}}</option>
-        {%endfor%}
-    </select>
-    <br><br>
-    <button type="submit">Add</button>
+        <label for="wallName">Wall Name: </label>
+        <input type="text" name="wallName" id="wallName" autofocus>
+        <br><br>
+        <label for="crag">Crag</label>
+        <select  name="cragID" id="crag">
+            {%for crag in data%}
+                <option value="{{crag.id}}">{{crag.cragName}}</option>
+            {%endfor%}
+        </select>
+        <br><br>
+        <button type="submit">Add</button>
     </form>
 
 </div> 

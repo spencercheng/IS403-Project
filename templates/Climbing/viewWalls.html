@@ -1,24 +1,39 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block content%}
-
-<div>
+<nav>
+    <h2 class="logo">Climbing <span>Spots</span></h2>
+    <ul>
+        <li class="list"><a href="{%url "index"%}">Home</a></li>
+        <li class="list"><a href="{%url "viewCrags"%}">Crags</a></li>
+        <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
+        <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
+    </ul>
+    <a href="#" class="btn">Climbing Spot</a>
+</nav>
+<div class="maindiv">
     {%for wall in wallData%}
+    <br>
     <div>
-        {{wall.wallName}}
-
-        <form method="POST" class="form-group" action="{% url 'editWall' %}" name="editWall" style="float:left">
+        &nbsp&nbsp&nbsp{{wall.wallName}} | {{wall.crag}}
+        <form method="POST" class="form-group" action="{% url 'delWall' %}" name="delWall" style="float:right">
+            {%csrf_token%}
+            <input type="number" name="wallID" id="wallID" value="{{wall.id}}" hidden>
+            &nbsp&nbsp<button type="submit" class="btn btn-primary">Delete</button>&nbsp&nbsp&nbsp
+        </form>
+        <form method="POST" class="form-group" action="{% url 'editWall' %}" name="editWall" style="float:right">
             {%csrf_token%}
             <input type="number" name="wallID" id="wallID" value="{{wall.id}}" hidden>
             <button type="submit" class="btn btn-primary">Edit</button>
         </form>
-        <form method="POST" class="form-group" action="{% url 'delWall' %}" name="delWall" style="float:left">
-            {%csrf_token%}
-            <input type="number" name="wallID" id="wallID" value="{{wall.id}}" hidden>
-            <button type="submit" class="btn btn-primary">Delete</button>
-        </form>
     </div>
+    <br>
+    <br>
+    <hr>
     {%endfor%}
+    <br>
+    &nbsp&nbsp&nbsp<a href="{% url 'addWall'%}"><button type="button" class="btn btn-primary btn-block">Add New Wall</button></a>
+    <br><br>
 </div>
 
 {%endblock%}
