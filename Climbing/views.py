@@ -79,6 +79,9 @@ def submitRoute(request):
        route.routeName = request.POST['routeName']
        route.comments = request.POST['comments']
        route.description = request.POST['description']
+       route.wall = (Wall.objects.get(id = request.POST['wall']))
+
+       route.save()
 
     return redirect("addRoute")
 
