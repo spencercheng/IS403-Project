@@ -3,30 +3,22 @@
 
 {%block content%}
 
-<!----hero Section start---->
+<!--hero Section start-->
 
 <div class="hero">
     <nav>
-        <h2 class="logo">Climbing <span>Spots</span></h2>
+        <h2 class="logo list-home">Climbing <span class='list-home'>Spots</span></h2>
         <ul>
-            <li class="list"><a href="{%url "index"%}">Home</a></li>
-            <li class="list"><a href="{%url "viewCrags"%}">Crags</a></li>
-            <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
-            <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
+            <li class="list-home"><a href="{%url "index"%}">Home</a></li>
+            <li class="list-home"><a href="{%url "viewCrags"%}">Crags</a></li>
+            <li class="list-home"><a href="{%url "viewWalls"%}">Walls</a></li>
+            <li class="list-home"><a href="{%url "viewRoutes"%}">Routes</a></li>
         </ul>
-        <a href="#" class="btn">Climbing Spot</a>
     </nav>
 
     <div class="content">
-        <h4>Great Climbing Spots</h4>
-        <h1>Please Share</h1>
-        <h3>We are here to help</h3>
-        <div class="newslatter">
-            <form>
-                <input type="email" name="email" id="mail" placeholder="Enter Your Email">
-                <input type="submit" name="submit" value="Lets Start">
-            </form>
-        </div>
+        <h1>Love Climbing?</h1>
+        <h3>We're here to help</h3>
     </div>
 </div>
 
@@ -36,9 +28,8 @@
         <img src="{% static 'img/hiking.jpg'%}">
         <div class="about-text">
             <h2>About us</h2>
-            <h5>IS 403 Class</h5>
-            <p>This is an amazing landing page.</p>
-            <button type="submit">Let's Talk</button>
+            <h5>We love to climb. Do you?</h5>
+            <p>Use this free web-app to keep track of all your favorite climbing spots! Organize them by crag, wall, and route! Good luck shredding the big walls!</p>
         </div>
     </div>
 </section>
@@ -46,42 +37,19 @@
 
 <div class="service">
     <div class="title">
-        <h2>Yooo</h2>
+        <h2>Get Started</h2>
     </div>
 
     <div class="box">
-        <div class="card">
-            <i class="fas fa-bars"></i>
-            <h5>Web Development</h5>
-            <div class="pra">
-                <p>Every website should be built with two primary goals: Firstly, it needs to work across all devices. Secondly, it needs to be fast as possible.</p>
-
-                <p style="text-align: center;">
-                    <a class="button" href="#">Read More</a>
-                </p>
-            </div>
-        </div>
 
         <div class="card">
             <i class="far fa-user"></i>
-            <h5>Web Development</h5>
+            <h5>Track Your Climbs</h5>
             <div class="pra">
-                <p>Every website should be built with two primary goals: Firstly, it needs to work across all devices. Secondly, it needs to be fast as possible.</p>
+                <p>Click the button below to start tracking your climbs. Make sure to leave comments and a greate description!</p>
 
                 <p style="text-align: center;">
-                    <a class="button" href="#">Read More</a>
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <i class="far fa-bell"></i>
-            <h5>Web Development</h5>
-            <div class="pra">
-                <p>Every website should be built with two primary goals: Firstly, it needs to work across all devices. Secondly, it needs to be fast as possible.</p>
-
-                <p style="text-align: center;">
-                    <a class="button" href="#">Read More</a>
+                    <a class="button" href="{%url "viewCrags"%}">Get Started</a>
                 </p>
             </div>
         </div>
