@@ -10,20 +10,26 @@
         <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
         <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
     </ul>
-    <a href="#" class="btn">Climbing Spot</a>
 </nav>
-<div>
+<br><br>
+<hr class="mainhr">
+<div><br>
+    <h2 >&nbsp&nbsp&nbspAdd a New Crag</h2><br>
     <form class="" method="POST" action="{%url "addCrag"%}" name="cragForm">
         {%csrf_token%}
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <label for="cragName">Crag Name:</label>
     <input type="text" name="cragName" id="cragName" autofocus>
     <br><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <label for="city">Crag Location:</label>
     <input type="text" name="city" id="city">
     <br><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <label for="state">State: </label>
     <input type="text" name="state" id="state">
     <br><br>
+    &nbsp&nbsp&nbsp
     <button type="submit">Add</button>
     </form>
 

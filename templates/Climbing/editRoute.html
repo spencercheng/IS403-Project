@@ -10,33 +10,40 @@
         <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
         <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
     </ul>
-    <a href="#" class="btn">Climbing Spot</a>
 </nav>
-<div>
+<br><br>
+<hr class="mainhr">
+<div><br>
+    <h2 >&nbsp&nbsp&nbspUpdate {{route.routeName}}</h2><br>
     <form class="" method="POST" action="{%url "submitEditRoute"%}" name="RouteForm">
         {%csrf_token%}
         <input type="number" hidden value="{{route.id}}" name="routeID">
-    <label for="routeName">Route Name: </label>
-    <input type="text" name="routeName" id="routeName" autofocus value = "{{route.routeName}}">
-    <br><br>
-    <label for="comments">Comments: </label>
-    <input type="text" name="comments" id="comments" autofocus value="{{route.comments}}">
-    <br><br>
-    <label for="description">Description: </label>
-    <input type="text" name="description" id="description" autofocus value = '{{route.description}}'>
-    <br><br>
-    <label for="wall">Wall</label>
-    <select  name="wall" id="wall">
-        {%for wall in walls%}
-            {%if wall.id == route.wall_id%}
-                <option value="{{wall.id}}" selected>{{wall.wallName}}</option>
-            {% else %}
-                <option value="{{wall.id}}">{{wall.wallName}}</option>
-            {%endif%}
-        {%endfor%}
-    </select>
-    <br><br>
-    <button type="submit">Update</button>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <label for="routeName">Route Name: </label>
+        <input type="text" name="routeName" id="routeName" autofocus value = "{{route.routeName}}">
+        <br><br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <label for="comments">Comments: </label>
+        <input type="text" name="comments" id="comments" autofocus value="{{route.comments}}">
+        <br><br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <label for="description">Description: </label>
+        <input type="text" name="description" id="description" autofocus value = '{{route.description}}'>
+        <br><br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <label for="wall">Wall:</label>
+        <select  name="wall" id="wall">
+            {%for wall in walls%}
+                {%if wall.id == route.wall_id%}
+                    <option value="{{wall.id}}" selected>{{wall.wallName}}</option>
+                {% else %}
+                    <option value="{{wall.id}}">{{wall.wallName}}</option>
+                {%endif%}
+            {%endfor%}
+        </select>
+        <br><br>
+        &nbsp&nbsp&nbsp
+        <button type="submit">Update</button>
     </form>
 
 </div> 

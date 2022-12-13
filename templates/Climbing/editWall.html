@@ -10,15 +10,19 @@
         <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
         <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
     </ul>
-    <a href="#" class="btn">Climbing Spot</a>
 </nav>
-<div>
+<br><br>
+<hr class="mainhr">
+<div><br>
+    <h2 >&nbsp&nbsp&nbspUpdate {{wall.wallName}}</h2><br>
     <form class="" method="POST" action="{%url 'submitEditWall' %}" name="WallForm">
         {%csrf_token%}
         <input type="number" value="{{wall.id}}" name = "wallID" hidden>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <label for="wallName">Wall Name: </label>
         <input type="text" name="wallName" id="wallName" autofocus value="{{wall.wallName}}">
         <br><br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <label for="crag">Crag</label>
         <select  name="cragID" id="crag" value = '{{wall.crag}}'>
             {%for crag in crags%}
@@ -30,6 +34,7 @@
             {%endfor%}
         </select>
         <br><br>
+        &nbsp&nbsp&nbsp
         <button type="submit">Update</button>
     </form>
 
