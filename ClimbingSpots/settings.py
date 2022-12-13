@@ -1,3 +1,5 @@
+# Kohlton Bingham, Raygen Blackwell, Spencer Cheng, Ike Melanson
+# A website that interacts with users to find and write reviews about climbing spots near them. 
 """
 Django settings for ClimbingSpots project.
 

@@ -2,21 +2,11 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import *
 
+# main page
 def indexPageView(request) :
     return render(request, 'Climbing/index.html')
 
-def routesPageView(request):
-    return render(request, 'Climbing/routes.html')
-
-def learnMorePageView(request):
-    return render(request, 'Climbing/learnmore.html')
-
-def aboutPageView(request):
-    return render(request, 'Climbing/about.html')
-
-def editPageView(request):
-     return render(request, 'Climbing/edit.html')
-     
+# adding views     
 def addCragPageView(request):
     if request.method == 'POST':
        crag = Crag()
@@ -106,6 +96,7 @@ def addRoutePageView(request):
 
     return render(request, 'Climbing/addRoute.html', context)
 
+# viewing views
 def viewCrags(request):
     
     cragData = Crag.objects.all()
@@ -136,6 +127,7 @@ def viewRoutes(request):
 
     return render(request, "Climbing/viewRoutes.html", context)
 
+# edit views
 def editCrag(request):
     crag = Crag.objects.get(id = request.POST['cragID'])
 
@@ -169,7 +161,7 @@ def editRoute(request):
 
     return render(request, "Climbing/editRoute.html", context)
 
-
+# delete views
 def delCrag(request):
 
     crag = Crag.objects.get(id = request.POST['cragID'])
