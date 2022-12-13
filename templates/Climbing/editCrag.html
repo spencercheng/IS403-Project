@@ -12,8 +12,22 @@
     <a href="#" class="btn">Climbing Spot</a>
 </nav>
 <div>
-    {{crag.id}}
-    {{crag.cragName}}
-</div>
+    <form class="" method="POST" action="{%url 'submitEditCrag'%}" name="cragForm">
+        {%csrf_token%}
+        <input type="number" hidden name="cragID" value="{{crag.id}}">
+    <label for="cragName">Crag Name:</label>
+    <input type="text" name="cragName" id="cragName" autofocus value="{{crag.cragName}}">
+    <br><br>
+    <label for="city">Crag Location:</label>
+    <input type="text" name="city" id="city" value="{{crag.city}}">
+    <br><br>
+    <label for="state">State: </label>
+    <input type="text" name="state" id="state" value="{{crag.state}}">
+    <br><br>
+    <button type="submit">Update</button>
+    </form>
+
+</div> 
+<br> 
 
 {%endblock%}

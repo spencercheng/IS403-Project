@@ -1,5 +1,6 @@
 {%extends 'base.html'%}
-{%load static%}
+{% load static %}
+
 {%block content%}
 <nav>
     <h2 class="logo">Climbing <span>Spots</span></h2>
@@ -12,8 +13,26 @@
     <a href="#" class="btn">Climbing Spot</a>
 </nav>
 <div>
-    {{wall.id}}
-    {{wall.cragName}}
-</div>
+    <form class="" method="POST" action="{%url 'submitEditWall' %}" name="WallForm">
+        {%csrf_token%}
+        <input type="number" value="{{wall.id}}" name = "wallID" hidden>
+        <label for="wallName">Wall Name: </label>
+        <input type="text" name="wallName" id="wallName" autofocus value="{{wall.wallName}}">
+        <br><br>
+        <label for="crag">Crag</label>
+        <select  name="cragID" id="crag" value = '{{wall.crag}}'>
+            {%for crag in crags%}
+                {%if crag.id == wall.crag_id%}
+                    <option value="{{crag.id}}" selected>{{crag.cragName}}</option>
+                {%else%}
+                    <option value="{{crag.id}}">{{crag.cragName}}</option>
+                {%endif%}
+            {%endfor%}
+        </select>
+        <br><br>
+        <button type="submit">Update</button>
+    </form>
 
+</div> 
+<br> 
 {%endblock%}

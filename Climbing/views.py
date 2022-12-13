@@ -28,6 +28,17 @@ def addCragPageView(request):
 
     return render(request, 'Climbing/addCrag.html')
 
+def submitEditCrag(request):
+    if request.method == 'POST':
+       crag = Crag.objects.get(id = request.POST['cragID'])
+       crag.cragName = request.POST['cragName']
+       crag.city = request.POST['city']
+       crag.state = request.POST['state']
+
+       crag.save()
+
+    return redirect('viewCrags')
+
 def addWallPageView(request):
     data = Crag.objects.all()
     context= {
@@ -47,6 +58,19 @@ def submitWall(request):
 
     return redirect("addWall")
 
+
+def submitEditWall(request):
+
+    if request.method == 'POST':
+        wall = Wall.objects.get(id = request.POST['wallID'])
+        wall.wallName = request.POST['wallName']
+        cragID = request.POST['cragID']
+        wall.crag = (Crag.objects.get(id = cragID))
+
+        wall.save()
+
+    return redirect("viewWalls")
+
 def submitRoute(request):
 
     if request.method == 'POST':
@@ -59,6 +83,19 @@ def submitRoute(request):
        route.save()
 
     return redirect("addRoute")
+
+def submitEditRoute(request):
+
+    if request.method == 'POST':
+       route = Route.objects.get(id = request.POST['routeID'])
+       route.routeName = request.POST['routeName']
+       route.comments = request.POST['comments']
+       route.description = request.POST['description']
+       route.wall = (Wall.objects.get(id = request.POST['wall']))
+
+       route.save()
+
+    return redirect("viewRoutes")
 
 def addRoutePageView(request):
     data = Wall.objects.all()
@@ -111,8 +148,11 @@ def editCrag(request):
 def editWall(request):
     wall = Wall.objects.get(id = request.POST['wallID'])
 
+    crags = Crag.objects.all()
+
     context = {
-        'wall' : wall
+        'wall' : wall,
+        'crags' : crags
     }
 
     return render(request, "Climbing/editWall.html", context)
@@ -120,8 +160,11 @@ def editWall(request):
 def editRoute(request):
     route = Route.objects.get(id = request.POST['routeID'])
 
+    walls = Wall.objects.all()
+    
     context = {
-        'route' : route
+        'route' : route,
+        'walls' : walls
     }
 
     return render(request, "Climbing/editRoute.html", context)
