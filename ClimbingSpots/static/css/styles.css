@@ -155,7 +155,6 @@ button{
 	transition: .4s; 
 }
 button:hover{
-	background-color: transparent;
 	border: 2px solid #f9004d;
 	cursor: pointer;
 }
@@ -219,7 +218,6 @@ h5{
 	transition: .4s; 
 }
 .card .button:hover{
-	background-color: transparent;
 	border: 2px solid #f9004d;
 	cursor: pointer;
 }
@@ -249,7 +247,6 @@ h5{
 	transition: .4s; 
 }
 .contact-me .button-two:hover{
-	background-color: transparent;
 	border: 2px solid #f9004d;
 	cursor: pointer;
 }
@@ -308,4 +305,12 @@ footer p:nth-child(2){
 .maindiv {
 	margin: 70px;
 	border: 1px solid;
+}
+
+.list-home {
+	color: white;
+}
+
+hr {
+	background-color: #f9004d;
 }
