@@ -13,19 +13,19 @@
     <a href="#" class="btn">Climbing Spot</a>
 </nav>
 <div>
-    <form class="" method="POST" action="{%url "addWall"%}" name="WallForm">
+    <form class="" method="POST" action="{%url "submitWall" %}" name="WallForm">
         {%csrf_token%}
-    <label for="wallName">Wall Name: </label>
-    <input type="text" name="wallName" id="wallName" autofocus>
-    <br><br>
-    <label for="crag">Crag</label>
-    <select  name="crag" id="crag">
-        {%for crag in data%}
-            <option value="{{crag.id}}">{{crag.cragName}}</option>
-        {%endfor%}
-    </select>
-    <br><br>
-    <button type="submit">Add</button>
+        <label for="wallName">Wall Name: </label>
+        <input type="text" name="wallName" id="wallName" autofocus>
+        <br><br>
+        <label for="crag">Crag</label>
+        <select  name="cragID" id="crag">
+            {%for crag in data%}
+                <option value="{{crag.id}}">{{crag.cragName}}</option>
+            {%endfor%}
+        </select>
+        <br><br>
+        <button type="submit">Add</button>
     </form>
 
 </div> 
