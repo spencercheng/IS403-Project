@@ -1,3 +1,5 @@
+# Kohlton Bingham, Raygen Blackwell, Spencer Cheng, Ike Melanson
+# A website that interacts with users to find and write reviews about climbing spots near them. 
 """
 Django settings for ClimbingSpots project.
 
@@ -79,9 +81,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'hiking',
         'USER': 'postgres',
-        'PASSWORD': 'Hel@man512',
-        'HOST': 'localhost'#,
-        #'PORT' : '5433'
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT' : '5433'
     }
 }
 
