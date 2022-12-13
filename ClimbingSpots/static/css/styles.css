@@ -311,6 +311,7 @@ footer p:nth-child(2){
 	color: white;
 }
 
-hr {
+.mainhr {
 	background-color: #f9004d;
+	height: 10px;
 }
