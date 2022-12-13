@@ -1,19 +1,39 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block content%}
-<nav>
-    <h2 class="logo">Climbing <span>Spots</span></h2>
+<nav class="navbg">
+    <h2 class="logo2">Climbing <span>Spots</span></h2>
     <ul>
         <li class="list"><a href="{%url "index"%}">Home</a></li>
         <li class="list"><a href="{%url "viewCrags"%}">Crags</a></li>
         <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
         <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
     </ul>
-    <a href="#" class="btn">Climbing Spot</a>
 </nav>
-<div>
-    {{crag.id}}
-    {{crag.cragName}}
-</div>
+
+<hr class="mainhr">
+<div><br>
+    <h2>&nbsp&nbsp&nbspUpdate {{crag.cragName}}</h2><br>
+    <form class="" method="POST" action="{%url 'submitEditCrag'%}" name="cragForm">
+        {%csrf_token%}
+        <input type="number" hidden name="cragID" value="{{crag.id}}">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label for="cragName">Crag Name:</label>
+    <input type="text" name="cragName" id="cragName" autofocus value="{{crag.cragName}}">
+    <br><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label for="city">Crag Location:</label>
+    <input type="text" name="city" id="city" value="{{crag.city}}">
+    <br><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label for="state">State: </label>
+    <input type="text" name="state" id="state" value="{{crag.state}}">
+    <br><br>
+    &nbsp&nbsp&nbsp
+    <button type="submit">Update</button>
+    </form>
+
+</div> 
+<br> 
 
 {%endblock%}

@@ -1,17 +1,21 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block content%}
-<nav>
-    <h2 class="logo">Climbing <span>Spots</span></h2>
+<nav class="navbg">
+    <h2 class="logo2">Climbing <span>Spots</span></h2>
     <ul>
         <li class="list"><a href="{%url "index"%}">Home</a></li>
         <li class="list"><a href="{%url "viewCrags"%}">Crags</a></li>
         <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
         <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
     </ul>
-    <a href="#" class="btn">Climbing Spot</a>
 </nav>
-<div>
+
+<hr class="mainhr">
+<div><br>
+    <h2 >&nbsp&nbsp&nbspRoutes</h2>
+</div>
+<div class="maindiv">
     {%for route in routeData%}
     <br>
     <div>
@@ -31,6 +35,10 @@
     <br>
     <hr>
     {%endfor%}
+</div>
+<div>
+    &nbsp&nbsp&nbsp<a href="{% url 'addRoute'%}"><button type="button" class="btn btn-primary btn-block">Add New Route</button></a>
+    <br><br>
 </div>
 
 {%endblock%}
