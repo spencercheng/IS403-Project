@@ -40,6 +40,7 @@ def submitEditCrag(request):
     return redirect('viewCrags')
 
 def addWallPageView(request):
+    
     data = Crag.objects.all()
     context= {
         "data": data
@@ -78,9 +79,6 @@ def submitRoute(request):
        route.routeName = request.POST['routeName']
        route.comments = request.POST['comments']
        route.description = request.POST['description']
-       route.wall = (Wall.objects.get(id = request.POST['wall']))
-
-       route.save()
 
     return redirect("addRoute")
 
@@ -104,7 +102,6 @@ def addRoutePageView(request):
     }
 
     return render(request, 'Climbing/addRoute.html', context)
-
 
 def viewCrags(request):
     

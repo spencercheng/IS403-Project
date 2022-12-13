@@ -27,7 +27,7 @@
     <label for="wall">Wall</label>
     <select  name="wall" id="wall">
         {%for wall in data%}
-            <option value="{{wall.id}}">{{wall.wallName}}</option>
+            <option name="wall" value="{{wall.id}}">{{wall.wallName}}</option>
         {%endfor%}
     </select>
     <br><br>
