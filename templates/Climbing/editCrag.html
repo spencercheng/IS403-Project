@@ -9,21 +9,27 @@
         <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
         <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
     </ul>
-    <a href="#" class="btn">Climbing Spot</a>
 </nav>
-<div>
+<br><br>
+<hr>
+<div><br>
+    <h2>&nbsp&nbsp&nbspUpdate {{crag.cragName}}</h2><br>
     <form class="" method="POST" action="{%url 'submitEditCrag'%}" name="cragForm">
         {%csrf_token%}
         <input type="number" hidden name="cragID" value="{{crag.id}}">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <label for="cragName">Crag Name:</label>
     <input type="text" name="cragName" id="cragName" autofocus value="{{crag.cragName}}">
     <br><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <label for="city">Crag Location:</label>
     <input type="text" name="city" id="city" value="{{crag.city}}">
     <br><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <label for="state">State: </label>
     <input type="text" name="state" id="state" value="{{crag.state}}">
     <br><br>
+    &nbsp&nbsp&nbsp
     <button type="submit">Update</button>
     </form>
 

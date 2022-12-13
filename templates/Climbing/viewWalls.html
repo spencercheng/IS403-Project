@@ -9,8 +9,12 @@
         <li class="list"><a href="{%url "viewWalls"%}">Walls</a></li>
         <li class="list"><a href="{%url "viewRoutes"%}">Routes</a></li>
     </ul>
-    <a href="#" class="btn">Climbing Spot</a>
 </nav>
+<br><br>
+<hr>
+<div><br>
+    <h2 >&nbsp&nbsp&nbspWalls</h2>
+</div>
 <div class="maindiv">
     {%for wall in wallData%}
     <br>
@@ -31,7 +35,8 @@
     <br>
     <hr>
     {%endfor%}
-    <br>
+</div>
+<div>
     &nbsp&nbsp&nbsp<a href="{% url 'addWall'%}"><button type="button" class="btn btn-primary btn-block">Add New Wall</button></a>
     <br><br>
 </div>
